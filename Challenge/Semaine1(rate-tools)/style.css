@@ -1,0 +1,118 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    /* box-shadow: 0 0 0 1px red; */
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background-image: url('assets/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main{
+    width: 353px;
+    height: 326px;
+    border-radius: 8px;
+    border: solid 1px #E0E0E0;
+    padding: 24px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    justify-content: center;
+
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.reset{
+    align-self: flex-end;
+    width: 32px;
+    height: 32px;
+}
+
+.main p {
+    width: 305px;
+    height: 62px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32.5px;
+    font-family: Montserrat;
+}
+
+.information{
+    width: 305px;
+    height: 72px;
+    font-size: 16px;
+    line-height: 24px;
+    font-family: Montserrat;
+}
+
+.information span{
+    font-weight: 600;
+}
+.rate-place{
+    width: 305px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rate{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 240px;
+    height: 48px;
+    gap:10px;
+}
+.star{
+    background-image: url(assets/star.png);
+    width: 32px;
+    height: 32px;
+   background-size: contain;
+   cursor: pointer;
+   transition: transform 0.2s; 
+}
+
+.star:hover{
+    background-image: url('assets/star_hover.png');
+}
+
+.star.special:hover,
+.star.special:hover ~ .star {
+    background-color: red; /* couleur différente pour l'étoile spéciale et les étoiles en dessous */
+}
+
+.below-selected{
+    background-image: url('assets/star_full.png');
+}
+
+.selected{
+    background-image: url('assets/star_selected.png');
+}
+
+
+.above-selected{
+    background-image: url('assets/star_not_selected.png');
+}
+
+.star.before-hovered{
+    background-image: url('assets/star_full.png');
+}
+
+.star.hovered {
+    background-image: url('assets/star_hover.png');
+}
