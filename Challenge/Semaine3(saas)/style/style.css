@@ -1,6 +1,6 @@
 *{
   box-sizing: border-box;
-  box-shadow: 0 0 0 1px red;
+  /**box-shadow: 0 0 0 1px red;*/
   padding: 0;
   margin: 0;
 }
@@ -37,16 +37,19 @@ nav{
   padding: 15px 30px;
   background: #0B081C80;
   border-radius: 25px;
+  animation: menuOpacity 3s ease-in-out; 
 }
+
 
 nav .nav-icon {
   display: flex;
+  animation: iconSlideIn 1s ease-out forwards; /* Animation pour l'icône de navigation */
 }
 
 nav .navbar-menu{
   width: 400px;
-  gap: 32px
-
+  gap: 32px;
+  animation: menuSlideIn 1.5s ease-out forwards; /* Animation pour le menu */
 }
 
 nav .navbar-menu ul{
@@ -65,8 +68,10 @@ nav .navbar-menu ul li{
  text-align: left;
 }
 
-
-
+.nav-btn{
+  animation: buttonSlideIn 1s ease-out forwards; /* Animation pour le bouton de navigation */
+  
+}
 .btn-style{
   padding: 10px 10px;
   border: none;
@@ -74,9 +79,41 @@ nav .navbar-menu ul li{
   color: black;
 }
 
+@keyframes iconSlideIn {
+  from {
+    transform: translateX(-100px); /* Icône de navigation en dehors de l'écran à gauche */
+    opacity: 0%;
+  }
+  to {
+    transform: translateX(0px); /* Icône de navigation à sa position initiale */
+    opacity: 100%;
+  }
+}
+
+@keyframes buttonSlideIn {
+  from {
+    transform: translateX(100px); /* Bouton de navigation en dehors de l'écran à droite */
+    opacity: 0%;
+  }
+  to {
+    transform: translateX(0px); /* Bouton de navigation à sa position initiale */
+    opacity: 100%;
+  }
+}
+
+@keyframes menuSlideIn {
+  from {
+    transform: translateY(-50px); /* Menu au-dessus de sa position finale */
+    opacity: 0%;
+  }
+  to {
+    transform: translateY(0px); /* Menu à sa position finale */
+    opacity: 100%;
+  }
+}
+
 main{
   width: 60%;
-  
   margin: auto;
   text-align: center;
 
@@ -179,10 +216,32 @@ margin-bottom: 30px;
   grid-column-gap: 24px;
   grid-row-gap: 80px; 
 }
+.item{
+  opacity: 0;
+  animation: fadeIn 1s ease forwards; /* Animation d'apparition */
+}
+.item1 {
+   grid-area: 1 / 1 / 1 / 2; 
+  }
+.item2 {
+   grid-area: 1 / 2 / 1 / 3;
+    animation-delay: 2s;
+   }
+.item3 {
+   grid-area: 2 / 1 / 2 / 3; 
+   animation-delay: 3s;
+  } 
 
-.item1 { grid-area: 1 / 1 / 1 / 2; }
-.item2 { grid-area: 1 / 2 / 1 / 3; }
-.item3 { grid-area: 2 / 1 / 2 / 3; } 
+  
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 
 .brand-work{
   margin-bottom: 50px;;
@@ -290,6 +349,7 @@ text-decoration: underline;
   border-radius: 20px;
 }
 
+
 .power{
   width: 80%;
 height: 440px;
@@ -343,7 +403,6 @@ footer{
   display: flex;
   width: 80%;
   margin: 0 auto 50px auto;
-  
 }
 
 footer .ft1{
@@ -362,5 +421,38 @@ footer .ft2{
 footer .ft3{
   display: flex;
   width: 20%;
+  align-items: flex-end;
+
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer span{
+  font-family: Montserrat;
+font-size: 15px;
+font-weight: 500;
+line-height: 29px;
+letter-spacing: -0.01em;
+text-align: left;
+margin: 10px 0;
+display: inline-block;
+
+}
+
+footer p,li{
+  font-family: Montserrat;
+font-size: 12px;
+font-weight: 300;
+line-height: 22px;
+letter-spacing: -0.01em;
+text-align: left;
+
+}
+
+.arobase{
+margin-top: 15px;
+color: #939393;
 
 }
